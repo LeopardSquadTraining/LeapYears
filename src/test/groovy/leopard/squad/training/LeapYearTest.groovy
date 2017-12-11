@@ -52,4 +52,19 @@ class LeapYearTest extends Specification {
           result == false
     }
 
+    def "test leap year functionality with an array or years"() {
+
+        when:
+          def leapYear = new LeapYear()
+          def years = [2004, 2008, 2080, 2092, 1904, 1972, 1904, 1964, 1952]
+          def result = null
+
+        then:
+          for(def year: years){
+              //println('Testing' + year + ' is a leap year.')
+              result = leapYear.isALeapYear(year)
+              result == true
+          }
+    }
+
 }
